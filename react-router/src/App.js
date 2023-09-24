@@ -5,6 +5,7 @@ import Home from './components/Home'
 import About from './components/About'
 import Packages from './components/Packages'
 
+import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'
 
 function App() {
 
@@ -12,30 +13,36 @@ function App() {
 
   return (
     <div className="App">
-      <header>
-        <h1 className="title">Welcome to Monty's Mineral SPA</h1>
-
-        <div className="navBar">
-          <ul>
-            <li>
-              <a href={<Home />}>Home</a>
-            </li>
-            <li>
-              <a href={<About />}>About Us</a>
-            </li>
-            <li>
-              <a href={<Packages packages={packages}/>}>Our Packages</a>
-            </li>
-          </ul>
+      <Router>
+        <header>
+          <h1 className="title">Welcome to Monty's Mineral SPA</h1>
+          <div className="navBar">
+            <ul>
+              <li>
+                <Link to='/'>Home</Link>
+              </li>
+              <li>
+                <Link to='/about'>About Us</Link>
+              </li>
+              <li>
+                <Link to='/packages'>Our Packages</Link>
+              </li>
+            </ul>
+          </div>
+        </header>
+        <div className="display">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/packages" element={<Packages packages={packages} />} />
+          </Routes>
         </div>
-
-      </header>
+      </Router>
     </div>
   );
 }
 
 export default App;
-
 
 
 
