@@ -29,15 +29,15 @@ function App() {
                 </Link>
               </Nav.Item>
               <Nav.Item>
-                <Link to='/about'>
-                  <Nav.Link href="/about">
+                <Link to='/About'>
+                  <Nav.Link href="/About">
                     About Us
                   </Nav.Link>
                 </Link>
               </Nav.Item>
               <Nav.Item>
-                <Link to='/packages'>
-                  <Nav.Link href="/packages">
+                <Link to='/Packages'>
+                  <Nav.Link href="/Packages">
                     Our Packages
                   </Nav.Link>
                 </Link>
@@ -48,8 +48,8 @@ function App() {
         <div className="display">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/packages" element={<Packages packages={packages} />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/Packages" element={<Packages packages={packages} />} />
           </Routes>
         </div>
       </Router>
